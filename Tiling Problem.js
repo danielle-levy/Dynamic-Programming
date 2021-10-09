@@ -7,7 +7,7 @@
 
 let TilingProblemRecursive = function(n) {
     if (n < 0) return 0
-    if (n == 0 || n == 1) return 1
+    if (n === 0 || n === 1) return 1
     return TilingProblemRecursive(n-1) + TilingProblemRecursive(n-2)
 }
 
@@ -15,7 +15,7 @@ let TilingProblemRecursive = function(n) {
 let TilingProblem = function(n) {
     if (n < 0) return 0
     let dp = new Array(n + 1)
-    if (n == 0 || n == 1) {
+    if (n === 0 || n === 1) {
         dp[0] = 1
         dp[1] = 1
         return 1
