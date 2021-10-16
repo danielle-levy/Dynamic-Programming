@@ -11,7 +11,7 @@ const maxSubArray = function(nums) {
     }
 
     let dp = new Array(nums.length)
-    let max = {"[0,0]": nums[0]}
+    let max = [[0,0], nums[0]]
     for (let i = 0; i < nums.length; i++) {
         dp[i] = new Array(nums.length)
         for (let j = i; j < nums.length; j++) {
@@ -22,7 +22,7 @@ const maxSubArray = function(nums) {
                 // sums the elements in nums from index j to index i
             }
             if (dp[i][j] > max[1]) {
-                max = {"[i,j]": dp[i][j]}
+                max = [[i,j], dp[i][j]]
             }
         }
     }
@@ -34,5 +34,8 @@ Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
 Output: 6
 Explanation: [4,-1,2,1] has the largest sum = 6
  */
-
-console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+let nums = [-2,1,-3,4,-1,2,1,-5,4]
+let sol = maxSubArray(nums)
+console.log("Input: nums = [-2,1,-3,4,-1,2,1,-5,4]\n" +
+    "Output - max Sum is: " + sol[1] +
+    `\nThe subarray is from index ${sol[0][0]} to ${sol[0][1]}: [${nums.slice(sol[0][0], sol[0][1] + 1)}]`)
