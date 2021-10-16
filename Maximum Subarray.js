@@ -36,6 +36,7 @@ Explanation: [4,-1,2,1] has the largest sum = 6
  */
 let nums = [-2,1,-3,4,-1,2,1,-5,4]
 let sol = maxSubArray(nums)
-console.log("Input: nums = [-2,1,-3,4,-1,2,1,-5,4]\n" +
+
+console.log("Input: nums = [" + nums + "]\n" +
     "Output - max Sum is: " + sol[1] +
     `\nThe subarray is from index ${sol[0][0]} to ${sol[0][1]}: [${nums.slice(sol[0][0], sol[0][1] + 1)}]`)
